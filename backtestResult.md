@@ -11,5 +11,14 @@
 ## Dates
 > Stuff about dates
 
-## Legs
-> Stuff about legs
+## Strategy
+> Stuff about strategies
+
+## Entry Conditions
+> Entry Conditions
+
+## Exit Conditions
+> Stuff about strategies
+
+## Misc
+> Stuff about strategies
