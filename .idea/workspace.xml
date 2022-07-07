@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9ff4c3e4-29ee-4ebd-8dc3-5613db9a2f7b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/creatingBacktest.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_sidebar.md" beforeDir="false" afterPath="$PROJECT_DIR$/_sidebar.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backtests.md" beforeDir="false" afterPath="$PROJECT_DIR$/backtestResult.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/creatingBacktest.md" beforeDir="false" afterPath="$PROJECT_DIR$/creatingBacktest.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +52,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1657046173593</updated>
-      <workItem from="1657046180297" duration="8072000" />
+      <workItem from="1657046180297" duration="11838000" />
     </task>
     <servers />
   </component>
