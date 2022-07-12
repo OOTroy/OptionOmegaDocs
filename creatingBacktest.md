@@ -46,7 +46,24 @@ Under the "Strategy" section, we have a list of common strategies that you can c
 - [Short Straddle](https://www.optionsplaybook.com/option-strategies/short-straddle/)
 - [Short Strangle](https://www.optionsplaybook.com/option-strategies/short-strangle/)
 ## Strategy
-> Stuff about strategies
+
+### Strike Selection Type
+
+*Please note, you can only choose one selection for all legs in the trade*.
+
+![](images/whatKindOfLeg.png)
+
+By default, the option legs will be based on delta
+![](images/deltaLeg.png)
+*Notice the delta symbol in the "type column" between the QTY and the DTE fields*.
+
+You can also use Percentage OTM (Out of the Money)
+![](images/otmLeg.png)
+*Notice the percentage symbol in the "type column" between the QTY and the DTE fields*.
+
+You can also use Percentage OTM (Out of the Money)
+![](images/percentageLeg.png)
+*Notice the dollar symbol in the "type column" between the QTY and the DTE fields*.
 
 ## Entry Conditions
 > Entry Conditions
