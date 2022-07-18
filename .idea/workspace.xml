@@ -4,6 +4,7 @@
     <list default="true" id="9ff4c3e4-29ee-4ebd-8dc3-5613db9a2f7b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/creatingBacktest.md" beforeDir="false" afterPath="$PROJECT_DIR$/creatingBacktest.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +31,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -56,7 +58,7 @@
       <workItem from="1657642531007" duration="2307000" />
       <workItem from="1657744387459" duration="1024000" />
       <workItem from="1657825441694" duration="12000" />
-      <workItem from="1657985918854" duration="2400000" />
+      <workItem from="1657985918854" duration="5523000" />
     </task>
     <servers />
   </component>

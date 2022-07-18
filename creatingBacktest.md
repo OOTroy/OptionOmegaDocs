@@ -23,9 +23,9 @@ If you notice on the "End Date" field, we have a little arrow. That will populat
 
 ![](images/dates2.png)
 
-## Common Strategies
+## Building your Strategy
 
-Under the "Strategy" section, we have a list of common strategies that you can choose from. Below is information about each one.
+Under the "Strategy" section, we have a list of common strategies that you can choose from if you don't want to create your own. Below is information about each one.
 
 *Please note, all examples are from The Options Playbook and Tastytrade.*.
 
@@ -45,7 +45,6 @@ Under the "Strategy" section, we have a list of common strategies that you can c
 - [Short Put](https://www.optionsplaybook.com/option-strategies/short-put/)
 - [Short Straddle](https://www.optionsplaybook.com/option-strategies/short-straddle/)
 - [Short Strangle](https://www.optionsplaybook.com/option-strategies/short-strangle/)
-## Strategy
 
 ### Strike Selection Type
 
@@ -126,11 +125,62 @@ How about if we wanted to sell a 25 delta call spread and we wanted the spread t
 The top leg shows us selling a 25 delta call and the bottom leg has an offset of +50. It is important to remember that
 positive values in the offset mean up the option chain.
 
-
-
-
 ## Entry Conditions
-> Entry Conditions
+Entry conditions allow you to run a backtest only when certain conditions are met. 
+
+### Entry Time
+![](images/EntryTime.png)
+
+*please note: The available entry times are between 9:32am and 3:59pm EST*.
+
+![](images/EntryTimeRequirements.png)
+
+### Frequency
+
+![](images/frequency.png)
+
+How often do you run your backtest is one of the most important questions you will need to think through when setting up your strategy. 
+
+Before diving into the frequencies available to run your backtests, we need explain a very simple but very important toggle:
+
+#### Use Exact DTE
+
+![](images/useExactDte.png)
+
+This little button says that we want to run our strategy ONLY when there is an option contract that has our EXACT DTE. What does this mean? 
+
+Let's look at a calendar strategy as an example.
+
+![](images/calendarStrategy.png)
+
+If you have the "Use Exact DTE" button toggled, this test will only run IF there is BOTH a 15 DTE AND a 20 DTE available. Not 14 and 19. Not 16 and 21. ONLY a 15 DTE and a 20 DTE. 
+Storing this knowledge in your heart will save you a ton of time in the long run. 
+
+With that being said, let's move now to frequency types.
+
+
+#### Daily
+
+If you choose daily, Option Omega will run this strategy every day that you:
+- Have the funds available to run it (more on this later)
+- Have not exceeded the "max open trades" threshold that you set (more on this later)
+
+#### Weekly 
+
+![](images/weeklyFrequency.png)
+
+If you choose weekly, Option Omega will run this strategy every weekday (that you select) where you:
+- Have the funds available to run it (more on this later)
+- Have not exceeded the "max open trades" threshold that you set (more on this later)
+
+#### Monthly
+
+![](images/monthlyFrequency.png)
+
+If you choose weekly, Option Omega will run this strategy every day of the month (that you select) where you:
+- Have the funds available to run it (more on this later)
+- Have not exceeded the "max open trades" threshold that you set (more on this later)
+
 
 ## Exit Conditions
 > Stuff about strategies
