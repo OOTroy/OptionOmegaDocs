@@ -233,15 +233,21 @@ to a reasonable representation of what you think you could get filled on.
 
 ### Use Vix
 
+![](images/useVix.png)
+
 You can set a minimum or maximum VIX level as an entry condition. For instance, you are buying a double calendar but you only want to do it in environments 
 where the VIX is under 20. Another example would be you are selling a put credit spread but you only want to enter if the VIX is over 40.
 
 ### Use Technical Indicators
 
+![](images/useTechnicalIndicators.png)
+
 *RSI and SMA are calculated at 1 minute intervals.*
 *RSI is calculated using 14-day length and simple smoothing.*
 
 #### Min/Max RSI
+
+![](images/minMaxRsi.png)
 
 The Relative Strength Index (RSI), developed by J. Welles Wilder, is a momentum oscillator that measures the speed and change of price movements. 
 The RSI oscillates between zero and 100. Traditionally the RSI is considered overbought when above 70 and oversold when below 30.
@@ -252,10 +258,16 @@ Simple moving averages calculate the average of a range of prices by the number 
 ### Use Gaps
 
 *Please note: Use positive numbers for all values.*
+*Values should be in percentages.*
+* If you want to trade when the market moves a certain amount up or down, you can enter values into both "min" fields, as shown below, and the condition will trigger when either are true.*
 
-Trade when the market moves a certain percentage from the previous close to current open.
+![](images/useGaps.png)
+
+This will enable to you open trades when the market either moves a minimum amount up or down, or conversely under a certain amount, from the previous close to the open of the current day (or a combination of the two).
 
 ### Use SqueezeMetrics™ (Gamma / Dark Pool) Indicators
+
+![](images/useSqueezeMetrics.png)
 
 SqueezeMetrics provides open access to end-of-day DIX, GEX, and GXV values. Please see [SqueezeMetrics](https://squeezemetrics.com/) for more information.
 
@@ -271,7 +283,123 @@ Gamma Volatility; "1-day volatility historically associated with the given level
 *Please note: A historical low of GXV would be around a 6. A historical high GXV would be above 30 *
 
 ## Exit Conditions
-> Stuff about strategies
+
+### Profit Target
+
+![](images/profitTarget.png)
+
+When testing a strategy, you can set a profit target using three different methods:
+
+![](images/profitTargetTypes.png)
+
+1. Percentage
+   1. Let's say you have a put credit spread you are selling. You want to close the trade when the spread has lost 10% of its value. 
+   2. Perhaps you have a put debit spread that you bought. You want to close the trade when the spread has gained 10% of its value.
+2. Fixed Profit
+   1. If you buy $1 calls and want to make $5 profit, then enter 5 for the profit target
+3. Closing Order
+   1. You want to set a closing order at a certain price and get out when that price is filled.
+   
+
+### Stop Loss
+
+![](images/stopLoss.png)
+
+You can also set a stop loss using the same three methods
+
+1. Percentage
+    1. Let's say you have a put credit spread you are selling. You want to close the trade when the spread has gained 10% of its value.
+    2. Perhaps you have a put debit spread that you bought. You want to close the trade when the spread has lost 10% of its value.
+2. Fixed Profit
+    1. If you buy $1 calls and want to lose $4 max, then enter 4 for the stop loss
+3. Closing Order
+    1. You want to set a closing order at a certain price and get out when that price is filled.
+
+
+
+![](images/profitTargetTypes.png)
+
+### Use Early Exit
+
+![](images/useEarlyExit.png)
+
+This toggle is used for when you want to exit the trade before expiration.
+
+#### Early Exit Date
+
+Let's say you have a 45 DTE put spread. You can use this to say you would like to exit at 21 DTE, etc.
+
+#### Early Exit Time
+
+You can also specifiy the time you would like to get out. 
+*please note: in order to use the time, you must have an early exit date set*
+
+### Use Techincal Indicators
+
+![](images/useTechnicalIndicators.png)
+
+As is with entry conditions, you can also exit the trade when certain technical indicators are set. Please see "Entry Conditions" for more detail.
+
+### Exit When OTM Short Leg is touched (or approached)
+
+![](images/exitWhenTouched.png)
+
+You can also exit when the out of the money short is touched on your trade. Let's say you are selling a 
+put credit spread. You can choose to exit when the short in that spread is touched. You can also specify how many points before or after it is touched 
+that you want to exit.
+
+*please note: This is only useful for selling credit spreads and naked premium; This is not useful for calendars, flies, etc.
 
 ## Misc
-> Stuff about strategies
+
+This section is the pain zone. Each toggle is meant to make your test as realistic as possible in as many ways as possible.
+
+![](images/useCommissions.png)
+
+If you know ahead of your time what your per-contract fees and commissions are, you can put them here and we will account for those costs in your test.
+
+![](images/ignoreTrades.png)
+
+There are times when the market gets wonky (Covid Crash, Volmageddan, etc). If you toggle this, we will ignore trades where the 
+bid/ask widened over 10k basis points (100%)
+
+![](images/closeOnTestCompletion.png)
+
+Let's say you sell a 90 DTE put spread every day. This test runs from January 1st to January 31st. Presuming you had enough capital,
+at the end of January 31st, you might have over 30 trades still on. 
+
+Toggling this tells Option Omega to close those trades win, lose, or draw when the test date ends.
+
+![](images/capAtProfitTarget.png)
+
+We cannot pretend overnight gaps won't affect your trade (nor should we). But what we can do is assume that the profit you received (besides an overnight gap) was as good as you got.
+
+![](images/capAtStopLoss.png)
+
+We cannot pretend overnight gaps won't affect your trade (nor should we). But what we can do is assume that the loss you received (besides an overnight gap) was as bad as it got.
+
+![](images/requireTwoHitsAtProfitTarget.png)
+
+One of the chief ways you can strengthen the rigidity of your tests is to make sure you are getting accurate fills.
+
+When this toggle is on we will only exit trades when the max profit is hit for two consecutive time intervals. The trade still exits at the first time interval and price, however.
+
+![](images/requireTwoHitsAtStopLoss.png)
+When this toggle is on we will only exit trades when the stop loss is hit for two consecutive time intervals. The trade still exits at the first time interval and price, however.
+
+![](images/useMinMaxEntryPremium.png)
+
+Sometimes the strategy you want to create requires uniform pricing upon entry. This toggle allows you to limit new trades to ONLY the credit(debit) 
+you want to receive(pay). 
+
+![](images/useBlackoutDays.png)
+
+Maybe you have been trading awhile and know that there are certain dates in history that you know you would not have traded.
+
+This allows you to enter a list of dates that will be ignored when the tester attempts to enter new trades.
+
+*Please use a list of comma-separated ISO-formatted dates! E.g.: 2022-05-25,2022-04-21*
+
+
+
+
