@@ -326,8 +326,13 @@ You can also set a stop loss using the same three methods
 This toggle is used for when you want to exit the trade before expiration.
 
 #### Early Exit Date
+![](images/dit.png)
 
-Let's say you have a 45 DTE put spread. You can use this to say you would like to exit at 21 DTE, etc.
+##### Using DTE
+Let's say you have a 45 DTE put spread. You can use this to say you would like to exit at a certain number of days before expiration.
+
+##### Using DIT
+Let's say you have a 45 DTE put spread. You can use this to say you would like to exit once you have been in the trade a certain number of days.
 
 #### Early Exit Time
 
