@@ -1,6 +1,2 @@
 * [Welcome](/)
 * [Creating Backtests](creatingBacktest.md)
-* [Understanding Backtest Results](backtestResult.md)
-* [Saving Backtests](savingBacktest.md)
-* [Editing Backtests](editingBacktest.md)
-* [Creating Portfolios](portfolio.md)
