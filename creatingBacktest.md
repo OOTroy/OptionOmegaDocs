@@ -129,11 +129,11 @@ positive values in the offset mean up the option chain.
 Entry conditions allow you to run a backtest only when certain conditions are met. 
 
 ### Entry Time
-![](images/EntryTime.png)
+![](images/entryTime.png)
 
 *please note: The available entry times are between 9:32am and 3:59pm EST*.
 
-![](images/EntryTimeRequirements.png)
+![](images/entryTimeRequirements.png)
 
 ### Frequency
 
