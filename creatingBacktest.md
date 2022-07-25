@@ -181,6 +181,94 @@ If you choose weekly, Option Omega will run this strategy every day of the month
 - Have the funds available to run it (more on this later)
 - Have not exceeded the "max open trades" threshold that you set (more on this later)
 
+### Starting Funds
+
+![](images/startingFunds.png)
+
+This is the ammount of money you want to start the test with. It will obviously change as your p/l changes.
+
+### Margin Allocation % Per Trade
+
+![](images/marginAllocation.png)
+
+This is the percentage of your starting funds that you want to use for each test. Let's think through a couple of examples. 
+
+Let's say you want to sell a call credit spread 5 points out. Assuming you are starting with over 1k in funds, 
+you should be able to run through a couple of trades in the test before you were ever in danger of running out of funds.
+
+Now, let's say you wanted to sell a naked call with your starting funds at 1k. Would this run? No it would not. Why?
+Because naked options require more margin than spreads.
+
+Quite often, we get asked why the number of contracts per trade seem to increase or decrease through the life of the trade. 
+The reason is that Option Omega is dynamically running your strategy using the starting funds and the margin allocation % that you put in place.
+When in doubt, check these fields.
+
+*please note: While we have made every effort to have accurate and realistic margin modeling, margin requirements vary between brokerages, and not all trades are supported.*.
+
+### Max Open Trades
+
+![](images/maxOpenTrades.png)
+
+This is the amount of trades you want to have on at any one time through the life of the test. 
+
+Let's say you are selling a put credit spread 120 days out and you are doing it everyday that you have the capital available to place the trade.
+If you start with a million dollars and you are allocating 2% of your margin allocation, you theoretically could have hundreds of trades on your book.
+This option allows you to put in place a limit on how many trades you can have on at any given time. With this you are basically saying that no matter
+how much money and how high an allocation I am using, never have open more than x-number of trades at any given time.
+
+You may notice that little toggle to the right that says, "Prune Oldest Trades". If you want to have x-number of trades on but you want to continue the 
+strategy, you can toggle this on. What it will do is close the oldest trade on your books before opening a new one.
+
+### Max Contracts Per Trade
+
+![](images/maxContractsPerTrade.png)
+
+If you would like to bypass all of the allocation work that is done through Option Omega, than you can simply put 1 in this field. That way, we will 
+ever only use one contract per trade, no matter how much your allocation % is or what your starting funds are.
+
+Another scenario where this comes in handy is if your strategy is hugely successfull over time! Let's imagine a strategy that won 99.9% of the time 
+while suffering only a 1% drawdown (If you find this please email us immediately!). If you are starting with 10k in funds and allocating 100% to this strategy,
+you would quickly be putting on thousands of contracts at one time. To be more realistic, you might want to limit the number of contracts 
+to a reasonable representation of what you think you could get filled on.
+
+### Use Vix
+
+You can set a minimum or maximum VIX level as an entry condition. For instance, you are buying a double calendar but you only want to do it in environments 
+where the VIX is under 20. Another example would be you are selling a put credit spread but you only want to enter if the VIX is over 40.
+
+### Use Technical Indicators
+
+*RSI and SMA are calculated at 1 minute intervals.*
+*RSI is calculated using 14-day length and simple smoothing.*
+
+#### Min/Max RSI
+
+The Relative Strength Index (RSI), developed by J. Welles Wilder, is a momentum oscillator that measures the speed and change of price movements. 
+The RSI oscillates between zero and 100. Traditionally the RSI is considered overbought when above 70 and oversold when below 30.
+
+#### SMA
+Simple moving averages calculate the average of a range of prices by the number of periods within that range.
+
+### Use Gaps
+
+*Please note: Use positive numbers for all values.*
+
+Trade when the market moves a certain percentage from the previous close to current open.
+
+### Use SqueezeMetrics™ (Gamma / Dark Pool) Indicators
+
+SqueezeMetrics provides open access to end-of-day DIX, GEX, and GXV values. Please see [SqueezeMetrics](https://squeezemetrics.com/) for more information.
+
+#### Min DIX/Max DIX
+Dark Index (percentage). "Relative amount of trade volume marked 'short' in off-exchange (dark) trading."
+
+#### Min GEX/Max GEX
+Market Makers' Gamma Exposure (billions $)
+
+#### Min GEX/Max GXV
+Gamma Volatility; "1-day volatility historically associated with the given level of GEX"
+
+*Please note: A historical low of GXV would be around a 6. A historical high GXV would be above 30 *
 
 ## Exit Conditions
 > Stuff about strategies
